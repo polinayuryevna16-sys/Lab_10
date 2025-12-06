@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BlockInfo Contract</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.2.0/ethers.umd.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .container { background: #f5f5f5; padding: 20px; border-radius: 10px; }
+        .button { 
+            background: #4CAF50; color: white; border: none; padding: 10px 15px; 
+            margin: 5px; border-radius: 5px; cursor: pointer; 
+        }
+        .button:hover { background: #45a049; }
+        .info { 
+            background: white; padding: 10px; margin: 10px 0; 
+            border-left: 4px solid #2196F3; 
+        }
+        .value { font-weight: bold; color: #2196F3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Контракт BlockInfo</h1>
+        
+        <div class="info">
+            <p>Адрес контракта: <span id="contractAddress" class="value">Загружается...</span></p>
+            <p>Текущий аккаунт: <span id="currentAccount" class="value">Не подключен</span></p>
+            <p>Сеть: <span id="network" class="value">-</span></p>
+        </div>
+
+        <h2>📈 Данные контракта</h2>
+        
+        <div class="info">
+            <p>Счётчик (count): <span id="countValue" class="value">-</span></p>
+            <button class="button" id="incrementButton">Увеличить счётчик</button>
+            <button class="button" id="getCountButton">Обновить счётчик</button>
+        </div>
+        
+        <div class="info">
+            <p>Текущий номер блока: <span id="currentBlock" class="value">-</span></p>
+            <button class="button" id="getBlockButton">Получить номер блока</button>
+        </div>
+        
+        <div class="info">
+            <p>Блоков создано с деплоя: <span id="blockCount" class="value">-</span></p>
+            <button class="button" id="getBlockCountButton">Получить количество блоков</button>
+        </div>
+        
+        <div class="info">
+            <p>Время с создания (секунды): <span id="timeAfter" class="value">-</span></p>
+            <button class="button" id="getTimeButton">Получить время</button>
+        </div>
+        
+        <div class="info">
+            <p>ID сети (chainid): <span id="networkId" class="value">-</span></p>
+            <button class="button" id="getNetButton">Получить ID сети</button>
+        </div>
+        
+        <div class="info">
+            <h3>Данные о создании контракта:</h3>
+            <p>Блок создания: <span id="creationBlock" class="value">-</span></p>
+            <p>Время создания (timestamp): <span id="creationTime" class="value">-</span></p>
+            <button class="button" id="getCreationDataButton">Получить данные создания</button>
+        </div>
+
+        <div style="margin-top: 20px; color: #666; font-size: 0.9em;">
+            <p>⚠️ Убедитесь, что MetaMask подключен к сети Sepolia (ID: 11155111)</p>
+        </div>
+    </div>
+
+    <script src="script3.js"></script>
+</body>
+</html>
